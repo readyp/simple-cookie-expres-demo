@@ -11,11 +11,12 @@ const allowedOrigins = ['http://localhost:3000', 'https://9097-202-152-138-17.ng
 app.use(cors({
   credentials: true,
   origin: (origin, callback): void => {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
+    // if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+    //   callback(null, true);
+    // } else {
+    //   callback(new Error('Not allowed by CORS'));
+    // }
+    callback(null, true);
   },
 }));
 
