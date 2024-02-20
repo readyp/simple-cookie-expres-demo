@@ -5,10 +5,10 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 
-app.use(helmet());
+// app.use(helmet());
 app.use(cors({
-  origin: true,
-  Credentials: true,
+  credentials: true,
+  origin: 'ngrok-free.app',
 }));
 
 // cookie
@@ -40,6 +40,6 @@ app.get('/clear-cookies', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(3001, () => {
   console.log('Server is running on port 3000');
 });
