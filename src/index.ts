@@ -8,7 +8,7 @@ const app = express();
 // app.use(helmet());
 app.use(cors({
   credentials: true,
-  origin: 'ngrok-free.app',
+  origin: 'https://9097-202-152-138-17.ngrok-free.app',
 }));
 
 // cookie
