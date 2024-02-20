@@ -5,10 +5,18 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 
+const allowedOrigins = ['http://localhost:3000', 'https://9097-202-152-138-17.ngrok-free.app'];
+
 // app.use(helmet());
 app.use(cors({
   credentials: true,
-  origin: 'https://9097-202-152-138-17.ngrok-free.app',
+  origin: (origin, callback): void => {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
 }));
 
 // cookie
